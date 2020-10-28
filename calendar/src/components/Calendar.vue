@@ -1,7 +1,7 @@
 <template>
   <div class="calendar">
-    <div @click='display' class="btn">1</div>
-    <div @click='display' class="btn">2</div>
+    <div @click="append('1')" class="btn">{{ current || '1'}}</div>
+    <div @click='display' id="btn2" class="btn">2</div>
     <div @click='display' class="btn">3</div>
     <div @click='display' class="btn">4</div>
     <div @click='display' class="btn">5</div>
@@ -35,6 +35,26 @@
   </div>
 </template>
 
+<script>
+  export default {
+  data() {
+    return {
+      previous: null,
+      current: '',
+      operator: null,
+      operatorClicked: false,
+      show: false
+    }
+  },
+  methods: {
+    display() {
+      this.show = !this.show
+    },
+  }
+}
+
+</script>
+
 
 <style scoped>
 .calculator {
@@ -48,6 +68,12 @@
   border: 1px solid #999;
   width: 150px;
   height: 200px;
+}
+.btn:hover {
+  height: 500px;
+  width: 400px;
+  transition: 3s;
+
 }
 
 </style>
