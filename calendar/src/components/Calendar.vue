@@ -1,4 +1,7 @@
-<template>
+
+  Vue.config.devtools = false;
+  Vue.config.productionTip = false;
+  <template>
   <div class="container">
     <div class="calendar">
     <div @click="append('1')" class="btn">{{ current || '1'}}</div>
