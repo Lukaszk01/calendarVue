@@ -1,5 +1,6 @@
 <template>
-  <div class="calendar">
+  <div class="container">
+    <div class="calendar">
     <div @click="append('1')" class="btn">{{ current || '1'}}</div>
     <div @click='display' id="btn2" class="btn">2</div>
     <div @click='display' class="btn">3</div>
@@ -33,6 +34,8 @@
     <div @click='display' class="btn">31</div>
 
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -47,9 +50,12 @@
     }
   },
   methods: {
-    display() {
-      this.show = !this.show
-    },
+    display: function (event) {
+      // `this` inside methods point to the Vue instance
+      alert('This date is not aval. ' + this.name + '!')
+      // `event` is the native DOM event
+      alert(event.target.tagName)
+    }
   }
 }
 
@@ -68,12 +74,14 @@
   border: 1px solid #999;
   width: 150px;
   height: 200px;
+  margin: 8px;
+  box-shadow: 1px 0.5px 3px gray;
 }
-.btn:hover {
+/*.btn:hover {
   height: 500px;
   width: 400px;
   transition: 3s;
 
 }
-
+*/
 </style>
