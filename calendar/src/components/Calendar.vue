@@ -3,7 +3,7 @@
     <div class="calendar">
     <div @click="append('1')" class="btn">{{ current || '1'}}</div>
     <div @click='display' id="btn2" class="btn">2</div>
-    <div @click='display' class="btn">3</div>
+    <div @click='onClick' :class="{ red : deleteClicked }" class="btn">3</div>
     <div @click='display' class="btn">4</div>
     <div @click='display' class="btn">5</div>
     <div @click='display' class="btn">6</div>
@@ -46,7 +46,8 @@
       current: '',
       operator: null,
       operatorClicked: false,
-      show: false
+      show: false,
+      deleteClicked: false
     }
   },
   methods: {
@@ -55,6 +56,9 @@
       alert('This date is not aval. ' + this.name + '!')
       // `event` is the native DOM event
       alert(event.target.tagName)
+    },
+    onClick() {
+      this.deleteClicked = true;
     }
   }
 }
@@ -63,6 +67,9 @@
 
 
 <style scoped>
+.red {
+  background-color: red;
+}
 .calculator {
   margin: 0 auto;
   width: 400px;
