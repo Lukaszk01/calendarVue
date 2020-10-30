@@ -1,9 +1,11 @@
+
+
 <template>
-  <div class="container">
+ <!--  <div class="container">
     <div class="calendar">
     <div @click="append('1')" class="btn">{{ current || '1'}}</div>
     <div @click='display' id="btn2" class="btn">2</div>
-    <div @click='onClick' :class="{ red : deleteClicked }" class="btn">3</div>
+    <div @click='onClick' id="btn" :class="{ red : deleteClicked }">3</div>
     <div @click='display' class="btn">4</div>
     <div @click='display' class="btn">5</div>
     <div @click='display' class="btn">6</div>
@@ -32,9 +34,13 @@
     <div @click='display' class="btn">29</div>
     <div @click='display' class="btn">30</div>
     <div @click='display' class="btn">31</div>
+  </div>
+  </div> -->
+  <div style="position:relative; margin:50px;">
 
-  </div>
-  </div>
+           <movable class="btn" target="parentEl">modal behavior</movable>`
+         <movable class="testmove" posTop="444" posLeft="444" :bounds="{y:[0,0]}"><span>bounds:only x</span></movable>
+     </div>
 
 </template>
 
@@ -69,6 +75,11 @@
 <style scoped>
 .red {
   background-color: red;
+  border: 1px solid #999;
+  width: 150px;
+  height: 200px;
+  margin: 8px;
+  box-shadow: 1px 0.5px 3px gray;
 }
 .calculator {
   margin: 0 auto;
@@ -84,6 +95,23 @@
   margin: 8px;
   box-shadow: 1px 0.5px 3px gray;
 }
+.testmove {
+        display:block;
+        position: absolute;
+        top: 0;
+        height: 150px;
+        width: 150px;
+        margin: 200px;
+        background: #333;
+        color: white;
+      }
+      .modaltitle {
+        background: blue;
+        display:block;
+        width:100%;
+        color: white;
+      }
+
 /*.btn:hover {
   height: 500px;
   width: 400px;
