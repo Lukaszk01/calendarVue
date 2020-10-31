@@ -37,9 +37,8 @@
   </div>
   </div> -->
   <div style="position:relative; margin:50px;">
-
-           <movable class="btn" target="parentEl">modal behavior</movable>`
-         <movable class="testmove" posTop="444" posLeft="444" :bounds="{y:[0,0]}"><span>bounds:only x</span></movable>
+    <movable class="btn" target="parentEl">modal behavior</movable>`
+      <movable class="testmove" posTop="444" posLeft="444" :bounds="{y:[0,0]}"><span>bounds:only x</span></movable>
      </div>
 
 </template>
@@ -111,12 +110,4 @@
         width:100%;
         color: white;
       }
-
-/*.btn:hover {
-  height: 500px;
-  width: 400px;
-  transition: 3s;
-
-}
-*/
 </style>
