@@ -68,6 +68,7 @@
 </template>
 
 <script>
+  // import CardAnimationsPage from '/src/components/card';
   export default {
   data() {
     return {
@@ -80,6 +81,9 @@
       deleteClicked: false
     }
   },
+  // components: {
+  //   CardAnimationsPage
+  // },
   methods: {
     display: function (event) {
       // `this` inside methods point to the Vue instance
@@ -147,14 +151,6 @@ textarea {
   width: 130px;
   height: 35px;
 }
-
-
-
-
-
-
-
-
 
 
 </style>
