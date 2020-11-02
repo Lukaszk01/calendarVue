@@ -4,35 +4,37 @@
 
   <div class="container">
     <div class="calendar">
+      <section class="parent">
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
       <div @click='display' id="btn2" class="btn">2</div>
       <div @click='onClick' id="btn" :class="{ red : deleteClicked }">3</div>
       <div @click='display' class="btn">4</div>
 
-    <div @click='display' class="btn">5</div>
-    <div @click='display' class="btn">6</div>
-    <div @click='display' class="btn">7</div>
-    <div @click='display' class="btn">8</div>
-    <div @click='display' class="btn">9</div>
-    <div @click='display' class="btn">10</div>
-    <div @click='display' class="btn">11</div>
-    <div @click='display' class="btn">12</div>
-    <div @click='display' class="btn">12</div>
-    <div @click='display' class="btn">13</div>
-    <div @click='display' class="btn">14</div>
-    <div @click='display' class="btn">15</div>
-    <div @click='display' class="btn">16</div>
-    <div @click='display' class="btn">17</div>
-    <div @click='display' class="btn">18</div>
-    <div @click='display' class="btn">19</div>
-    <div @click='display' class="btn">20</div>
-    <div @click='display' class="btn">21</div>
-    <div @click='display' class="btn">23</div>
-    <div @click='display' class="btn">24</div>
-    <div @click='display' class="btn">25</div>
-    <div @click='display' class="btn">26</div>
-    <div @click='display' class="btn">27</div>
-    <div @click='display' class="btn">28</div>
+      <div @click='display' class="btn">5</div>
+      <div @click='display' class="btn">6</div>
+      <div @click='display' class="btn">7</div>
+      <div @click='display' class="btn">8</div>
+      <div @click='display' class="btn">9</div>
+      <div @click='display' class="btn">10</div>
+      <div @click='display' class="btn">11</div>
+      <div @click='display' class="btn">12</div>
+      <div @click='display' class="btn">12</div>
+      <div @click='display' class="btn">13</div>
+      <div @click='display' class="btn">14</div>
+      <div @click='display' class="btn">15</div>
+      <div @click='display' class="btn">16</div>
+      <div @click='display' class="btn">17</div>
+      <div @click='display' class="btn">18</div>
+      <div @click='display' class="btn">19</div>
+      <div @click='display' class="btn">20</div>
+      <div @click='display' class="btn">21</div>
+      <div @click='display' class="btn">23</div>
+      <div @click='display' class="btn">24</div>
+      <div @click='display' class="btn">25</div>
+      <div @click='display' class="btn">26</div>
+      <div @click='display' class="btn">27</div>
+      <div @click='display' class="btn">28</div>
+
     <div @click='display' class="btn">
       <b-list-group>
       <b-list-group-item>
@@ -58,13 +60,11 @@
 
     <div @click='display' class="btn">
         31</div>
+        </section>
   </div>
+
+
   </div>
-<!--   <div style="position:relative; margin:50px;">
-    <movable class="btn" target="parentEl">modal behavior</movable>`
-      <movable class="testmove" posTop="444" posLeft="444" :bounds="{y:[0,0]}"><span>bounds:only x</span></movable>
-     </div>
- -->
 </template>
 
 <script>
@@ -122,6 +122,7 @@
   height: 200px;
   margin: 8px;
   box-shadow: 1px 0.5px 3px gray;
+  opacity: 1.0;
 }
 .testmove {
         display:block;
@@ -150,6 +151,19 @@ textarea {
 .list-group-item {
   width: 130px;
   height: 35px;
+}
+.btn {
+  opacity: 1.0;
+}
+.btn:hover {
+  box-shadow: 2px 0.5px 8px gray;
+  opacity: 0.5;
+}
+.parent:hover > .btn {
+  opacity: 0.5;
+}
+.parent:hover > .btn:hover {
+  opacity: 1.0;
 }
 
 
