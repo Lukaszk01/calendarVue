@@ -1,6 +1,7 @@
 
 
 <template>
+
   <div class="container">
     <div class="calendar">
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
@@ -146,6 +147,14 @@ textarea {
   width: 130px;
   height: 35px;
 }
+
+
+
+
+
+
+
+
 
 
 </style>
