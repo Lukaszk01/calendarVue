@@ -157,10 +157,12 @@ textarea {
 }
 .btn:hover {
   box-shadow: 2px 0.5px 8px gray;
-  opacity: 0.5;
+  opacity: 0.3;
+  transition: 0.8s;
 }
 .parent:hover > .btn {
-  opacity: 0.5;
+  opacity: 0.3;
+  transition: 0.8s;
 }
 .parent:hover > .btn:hover {
   opacity: 1.0;
