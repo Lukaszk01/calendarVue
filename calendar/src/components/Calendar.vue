@@ -65,11 +65,22 @@
 
     <div @click='display' class="btn">
         31</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         </section>
   </div>
-
-
   </div>
+
 </template>
 
 
@@ -85,11 +96,11 @@ import InfoCard from 'vue-info-card';
     return {
       front: {
         title: '30 Of some month',
-        graphData: [],
+        graphData: "Hover to see",
       },
       back: {
         title: 'Your tasks for this day:',
-        message: '1. Do this <br> 2. Do that <br>3. And another thing',
+        message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
       },
       previous: null,
       text: '',
@@ -153,7 +164,7 @@ import InfoCard from 'vue-info-card';
       .modaltitle {
         background: blue;
         display:block;
-        width:100%;
+        width: 100%;
         color: white;
       }
 textarea {
@@ -175,6 +186,8 @@ textarea {
   box-shadow: 2px 0.5px 8px gray;
   opacity: 0.3;
   transition: 0.8s;
+  height: 500px;
+  width: 400px;
 }
 .parent:hover > .btn {
   opacity: 0.3;
