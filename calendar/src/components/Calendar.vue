@@ -61,7 +61,7 @@
       :backTitle="back.title"
       :backData="back.message" />
   </div>
-    30</div>
+    <br>30</div>
 
     <div @click='display' class="btn">
         31</div>
@@ -95,11 +95,11 @@ import InfoCard from 'vue-info-card';
   data() {
     return {
       front: {
-        title: '30 Of some month',
+        title: '30th October',
         graphData: "Hover to see",
       },
       back: {
-        title: 'Your tasks for this day:',
+        title: 'Your tasks for 30th of October:',
         message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
       },
       previous: null,
