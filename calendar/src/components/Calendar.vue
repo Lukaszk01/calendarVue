@@ -5,7 +5,8 @@
       <section class="parent">
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
       <div @click='display' id="btn2" class="btn">2</div>
-      <div @click='onClick' id="btn" :class="{ red : deleteClicked }">3</div>
+      <div @click='display' id="btn2" class="btn">3</div>
+      <!-- <div @click='onClick' id="btn" :class="{ red : deleteClicked }">3</div> -->
       <div @click='display' class="btn">4</div>
 
       <div @click='display' class="btn">5</div>
@@ -31,8 +32,26 @@
       <div @click='display' class="btn">25</div>
       <div @click='display' class="btn">26</div>
       <div @click='display' class="btn">27</div>
-      <div @click='display' class="btn">28</div>
+      <div @click='display' class="btn">28
+            <div>
+      <b-form-textarea
+        id="textarea"
+        v-model="text"
+        placeholder="enter your task"
+        type="submit"
+        rows="3"
+        max-rows="6">
 
+      </b-form-textarea>
+<!--       <b-button size="small" v-model="submit">Button</b-button> -->
+    <info-card :frontType="'graph'"
+      :frontTitle="front.text"
+      :frontData="front.graphData"
+      :backTitle="back.title"
+      :backData="back.message" />
+  </div>
+      </div>
+ </section>
     <div @click='display' class="btn">
       <b-list-group>
       <b-list-group-item>
@@ -54,13 +73,7 @@
 
 
     <div @click='display' class="btn">
-      <div>
-    <info-card :frontType="'graph'"
-      :frontTitle="front.title"
-      :frontData="front.graphData"
-      :backTitle="back.title"
-      :backData="back.message" />
-  </div>
+
     <br>30</div>
 
     <div @click='display' class="btn">
@@ -77,7 +90,7 @@
         <br>
         <br>
 
-        </section>
+
   </div>
   </div>
 
@@ -97,10 +110,12 @@ import InfoCard from 'vue-info-card';
       front: {
         title: '30th October',
         graphData: "Hover to see",
+        text: "",
       },
       back: {
         title: 'Your tasks for 30th of October:',
         message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
+        text: "",
       },
       previous: null,
       text: '',
@@ -111,17 +126,17 @@ import InfoCard from 'vue-info-card';
       deleteClicked: false
     }
   },
-  methods: {
-    display: function (event) {
-      // `this` inside methods point to the Vue instance
-      alert('This date is not aval. ' + this.name + '!')
-      // `event` is the native DOM event
-      alert(event.target.tagName)
-    },
-    onClick() {
-      this.deleteClicked = true;
-    }
-  }
+  // methods: {
+  //   display: function (event) {
+  //     // `this` inside methods point to the Vue instance
+  //     alert('This date is not aval. ' + this.name + '!')
+  //     // `event` is the native DOM event
+  //     alert(event.target.tagName)
+  //   },
+  //   onClick() {
+  //     this.deleteClicked = true;
+  //   }
+  // }
 }
 
 </script>
@@ -136,17 +151,20 @@ import InfoCard from 'vue-info-card';
   margin: 8px;
   box-shadow: 1px 0.5px 3px gray;
 }
+.container {
+
+}
 .calculator {
   margin: 0 auto;
   width: 400px;
   font-size: 40px;
-  grid-auto-rows: minmax(50px, auto);
+
 }
 .btn {
   background-color: #F2F2F2;
   border: 1px solid #999;
-  width: 150px;
-  height: 200px;
+  width: 190px;
+  height: 240px;
   margin: 8px;
   box-shadow: 1px 0.5px 3px gray;
   opacity: 1.0;
@@ -167,20 +185,10 @@ import InfoCard from 'vue-info-card';
         width: 100%;
         color: white;
       }
-textarea {
-  width: 100px;
-  height: 10px;
-  background-color: #F2F2F2;
-  border: none;
-  font-size: 5px;
-}
 
 .list-group-item {
   width: 130px;
   height: 35px;
-}
-.btn {
-  opacity: 1.0;
 }
 .btn:hover {
   box-shadow: 2px 0.5px 8px gray;
