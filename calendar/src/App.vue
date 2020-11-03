@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <h2>October 2020</h2>
     <Calendar msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

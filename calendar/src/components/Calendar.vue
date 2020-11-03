@@ -1,5 +1,3 @@
-
-
 <template>
 
   <div class="container">
@@ -56,22 +54,54 @@
 
 
     <div @click='display' class="btn">
-    30</div>
+      <div>
+    <info-card :frontType="'graph'"
+      :frontTitle="front.title"
+      :frontData="front.graphData"
+      :backTitle="back.title"
+      :backData="back.message" />
+  </div>
+    <br>30</div>
 
     <div @click='display' class="btn">
         31</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         </section>
   </div>
-
-
   </div>
+
 </template>
 
+
+
 <script>
+import InfoCard from 'vue-info-card';
   // import CardAnimationsPage from '/src/components/card';
   export default {
+    components: {
+      InfoCard
+  },
   data() {
     return {
+      front: {
+        title: '30th October',
+        graphData: "Hover to see",
+      },
+      back: {
+        title: 'Your tasks for 30th of October:',
+        message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
+      },
       previous: null,
       text: '',
       current: '',
@@ -81,9 +111,6 @@
       deleteClicked: false
     }
   },
-  // components: {
-  //   CardAnimationsPage
-  // },
   methods: {
     display: function (event) {
       // `this` inside methods point to the Vue instance
@@ -137,7 +164,7 @@
       .modaltitle {
         background: blue;
         display:block;
-        width:100%;
+        width: 100%;
         color: white;
       }
 textarea {
@@ -159,6 +186,8 @@ textarea {
   box-shadow: 2px 0.5px 8px gray;
   opacity: 0.3;
   transition: 0.8s;
+  height: 500px;
+  width: 400px;
 }
 .parent:hover > .btn {
   opacity: 0.3;
@@ -166,6 +195,9 @@ textarea {
 }
 .parent:hover > .btn:hover {
   opacity: 1.0;
+}
+*, *::before, *::after {
+  font-size: 10px;
 }
 
 
