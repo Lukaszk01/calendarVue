@@ -1,5 +1,3 @@
-
-
 <template>
 
   <div class="container">
@@ -56,6 +54,13 @@
 
 
     <div @click='display' class="btn">
+      <div>
+    <info-card :frontType="'graph'"
+      :frontTitle="front.title"
+      :frontData="front.graphData"
+      :backTitle="back.title"
+      :backData="back.message" />
+  </div>
     30</div>
 
     <div @click='display' class="btn">
@@ -67,11 +72,25 @@
   </div>
 </template>
 
+
+
 <script>
+import InfoCard from 'vue-info-card';
   // import CardAnimationsPage from '/src/components/card';
   export default {
+    components: {
+      InfoCard
+  },
   data() {
     return {
+      front: {
+        title: '30 Of some month',
+        graphData: [],
+      },
+      back: {
+        title: 'Your tasks for this day:',
+        message: '1. Do this <br> 2. Do that <br>3. And another thing',
+      },
       previous: null,
       text: '',
       current: '',
@@ -81,9 +100,6 @@
       deleteClicked: false
     }
   },
-  // components: {
-  //   CardAnimationsPage
-  // },
   methods: {
     display: function (event) {
       // `this` inside methods point to the Vue instance
@@ -166,6 +182,9 @@ textarea {
 }
 .parent:hover > .btn:hover {
   opacity: 1.0;
+}
+*, *::before, *::after {
+  font-size: 10px;
 }
 
 
