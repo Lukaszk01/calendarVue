@@ -142,11 +142,6 @@ import InfoCard from 'vue-info-card';
       show: false,
       deleteClicked: false
     }
-    methods: {
-      addText: {
-        return this.newText
-      }
-    }
   },
   // methods: {
   //   display: function (event) {
