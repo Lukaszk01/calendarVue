@@ -1,8 +1,13 @@
 <template>
-
   <div class="container">
     <div class="calendar">
       <section class="parent">
+      <input v-model="newText">
+      <button v-on:click="addText">
+        add
+      </button>
+<p>{{ addText }}</p>
+
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
       <div @click='display' id="btn2" class="btn">2</div>
       <div @click='display' id="btn2" class="btn">3</div>
@@ -30,7 +35,18 @@
       <div @click='display' class="btn">23</div>
       <div @click='display' class="btn">24</div>
       <div @click='display' class="btn">25</div>
-      <div @click='display' class="btn">26</div>
+      <div @click='display' class="btn">26
+          <div>
+    <b-form-textarea
+      id="textarea"
+      v-model="text"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+    <h2 class="mt-3 mb-0">{{ text }}</h2>
+  </div>
+      </div>
       <div @click='display' class="btn">27</div>
       <div @click='display' class="btn">28
             <div>
@@ -55,15 +71,17 @@
     <div @click='display' class="btn">
       <b-list-group>
       <b-list-group-item>
-        <div>
-          <b-form-textarea
-            id="textarea"
-            v-model="text"
-            placeholder="Enter something..."
-            rows="3"
-            max-rows="6"></b-form-textarea>
-          <pre class="mt-3 mb-0">{{ text }}</pre>
-        </div>
+          <div>
+    <b-form-textarea
+      id="textarea"
+      v-model="text"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+
+    <pre class="mt-3 mb-0">{{ text }}</pre>
+  </div>
       </b-list-group-item>
         <b-list-group-item>2.</b-list-group-item>
         <b-list-group-item>3.</b-list-group-item>
@@ -110,13 +128,12 @@ import InfoCard from 'vue-info-card';
       front: {
         title: '30th October',
         graphData: "Hover to see",
-        text: "",
       },
       back: {
         title: 'Your tasks for 30th of October:',
         message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
-        text: "",
       },
+      newText: '',
       previous: null,
       text: '',
       current: '',
@@ -124,6 +141,11 @@ import InfoCard from 'vue-info-card';
       operatorClicked: false,
       show: false,
       deleteClicked: false
+    }
+    methods: {
+      addText: {
+        return this.newText
+      }
     }
   },
   // methods: {
@@ -207,6 +229,9 @@ import InfoCard from 'vue-info-card';
 *, *::before, *::after {
   font-size: 10px;
 }
-
+.mt-3, .mb-0 {
+  color: red;
+  font-size: 50px;
+}
 
 </style>
