@@ -2,13 +2,15 @@
   <div class="container">
     <div class="calendar">
       <section class="parent">
- <div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Value: {{ text }}</div>
+<div>
+    <b-form-textarea v-model="value" debounce="500" rows="3" max-rows="5"></b-form-textarea>
+    <pre class="mt-2 mb-0">{{ value }}</pre>
   </div>
 
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
-      <div @click='display' id="btn2" class="btn">2</div>
+      <div @click='display' class="btn">2
+      <p>{{ value }}</p>
+    </div>
       <div @click='display' id="btn2" class="btn">3</div>
       <!-- <div @click='onClick' id="btn" :class="{ red : deleteClicked }">3</div> -->
       <div @click='display' class="btn">4</div>
@@ -85,7 +87,7 @@ import InfoCard from 'vue-info-card';
   },
   data() {
     return {
-      text: '',
+      value: '',
       form: {
           checked: []
         },
@@ -100,7 +102,12 @@ import InfoCard from 'vue-info-card';
       newText: '',
       current: ''
     }
-  }
+  },
+  methods: {
+      formatter(value) {
+        return value.toLowerCase()
+      }
+    }
 }
 
 </script>
