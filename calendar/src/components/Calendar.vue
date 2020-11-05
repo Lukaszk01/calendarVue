@@ -37,30 +37,9 @@
       <div @click='display' class="btn">24</div>
       <div @click='display' class="btn">25</div>
       <div @click='display' class="btn">26
-<!--           <div>
-    <b-form-textarea
-      id="textarea"
-      v-model="text"
-      placeholder="Enter something..."
-      rows="3"
-      max-rows="6"
-    ></b-form-textarea>
-    <h2 class="mt-3 mb-0">{{ text }}</h2>
-  </div> -->
       </div>
       <div @click='display' class="btn">27</div>
       <div @click='display' class="btn">28
-<!--             <div>
-      <b-form-textarea
-        id="textarea"
-        v-model="text"
-        placeholder="enter your task"
-        type="submit"
-        rows="3"
-        max-rows="6">
-
-      </b-form-textarea> -->
-<!--       <b-button size="small" v-model="submit">Button</b-button> -->
     <info-card :frontType="'graph'"
       :frontTitle="front.text"
       :frontData="front.graphData"
@@ -73,15 +52,6 @@
       <b-list-group>
       <b-list-group-item>
           <div>
- <!--    <b-form-textarea
-      id="textarea"
-      v-model="text"
-      placeholder="Enter something..."
-      rows="3"
-      max-rows="6"
-    ></b-form-textarea> -->
-
-  <!--   <pre class="mt-3 mb-0">{{ text }}</pre> -->
   </div>
       </b-list-group-item>
         <b-list-group-item>2.</b-list-group-item>
@@ -90,27 +60,13 @@
         <b-list-group-item>5.</b-list-group-item>
     </b-list-group>29</div>
 
-
     <div @click='display' class="btn">
 
     <br>30</div>
 
     <div @click='display' class="btn">
         31</div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-  </div>
+    </div>
   </div>
 
 </template>
@@ -136,26 +92,9 @@ import InfoCard from 'vue-info-card';
         message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
       },
       newText: '',
-      previous: null,
-
-      current: '',
-      operator: null,
-      operatorClicked: false,
-      show: false,
-      deleteClicked: false
+      current: ''
     }
-  },
-  // methods: {
-  //   display: function (event) {
-  //     // `this` inside methods point to the Vue instance
-  //     alert('This date is not aval. ' + this.name + '!')
-  //     // `event` is the native DOM event
-  //     alert(event.target.tagName)
-  //   },
-  //   onClick() {
-  //     this.deleteClicked = true;
-  //   }
-  // }
+  }
 }
 
 </script>
