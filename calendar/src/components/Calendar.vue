@@ -2,11 +2,12 @@
   <div class="container">
     <div class="calendar">
       <section class="parent">
-      <input v-model="newText">
-      <button v-on:click="addText">
-        add
-      </button>
-<p>{{ addText }}</p>
+
+
+ <div>
+    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+    <div class="mt-2">Value: {{ text }}</div>
+  </div>
 
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
       <div @click='display' id="btn2" class="btn">2</div>
@@ -36,7 +37,7 @@
       <div @click='display' class="btn">24</div>
       <div @click='display' class="btn">25</div>
       <div @click='display' class="btn">26
-          <div>
+<!--           <div>
     <b-form-textarea
       id="textarea"
       v-model="text"
@@ -45,11 +46,11 @@
       max-rows="6"
     ></b-form-textarea>
     <h2 class="mt-3 mb-0">{{ text }}</h2>
-  </div>
+  </div> -->
       </div>
       <div @click='display' class="btn">27</div>
       <div @click='display' class="btn">28
-            <div>
+<!--             <div>
       <b-form-textarea
         id="textarea"
         v-model="text"
@@ -58,29 +59,29 @@
         rows="3"
         max-rows="6">
 
-      </b-form-textarea>
+      </b-form-textarea> -->
 <!--       <b-button size="small" v-model="submit">Button</b-button> -->
     <info-card :frontType="'graph'"
       :frontTitle="front.text"
       :frontData="front.graphData"
       :backTitle="back.title"
       :backData="back.message" />
-  </div>
+ <!--  </div> -->
       </div>
  </section>
     <div @click='display' class="btn">
       <b-list-group>
       <b-list-group-item>
           <div>
-    <b-form-textarea
+ <!--    <b-form-textarea
       id="textarea"
       v-model="text"
       placeholder="Enter something..."
       rows="3"
       max-rows="6"
-    ></b-form-textarea>
+    ></b-form-textarea> -->
 
-    <pre class="mt-3 mb-0">{{ text }}</pre>
+  <!--   <pre class="mt-3 mb-0">{{ text }}</pre> -->
   </div>
       </b-list-group-item>
         <b-list-group-item>2.</b-list-group-item>
@@ -125,6 +126,7 @@ import InfoCard from 'vue-info-card';
   },
   data() {
     return {
+      text: '',
       front: {
         title: '30th October',
         graphData: "Hover to see",
@@ -135,7 +137,7 @@ import InfoCard from 'vue-info-card';
       },
       newText: '',
       previous: null,
-      text: '',
+
       current: '',
       operator: null,
       operatorClicked: false,
