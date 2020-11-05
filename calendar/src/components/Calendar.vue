@@ -80,7 +80,6 @@
 
 <script>
 import InfoCard from 'vue-info-card';
-  // import CardAnimationsPage from '/src/components/card';
   export default {
     components: {
       InfoCard
@@ -109,7 +108,6 @@ import InfoCard from 'vue-info-card';
       }
     }
 }
-
 </script>
 
 
@@ -121,9 +119,6 @@ import InfoCard from 'vue-info-card';
   height: 200px;
   margin: 8px;
   box-shadow: 1px 0.5px 3px gray;
-}
-.container {
-
 }
 .calculator {
   margin: 0 auto;
