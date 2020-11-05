@@ -2,8 +2,6 @@
   <div class="container">
     <div class="calendar">
       <section class="parent">
-
-
  <div>
     <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
     <div class="mt-2">Value: {{ text }}</div>
@@ -33,7 +31,14 @@
       <div @click='display' class="btn">19</div>
       <div @click='display' class="btn">20</div>
       <div @click='display' class="btn">21</div>
-      <div @click='display' class="btn">23</div>
+      <div @click='display' class="btn">23
+      <b-form-group id="input-group-4">
+        <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
+          <b-form-checkbox value="me">First task</b-form-checkbox>
+          <b-form-checkbox value="that">Second task</b-form-checkbox>
+        </b-form-checkbox-group>
+      </b-form-group>
+      </div>
       <div @click='display' class="btn">24</div>
       <div @click='display' class="btn">25</div>
       <div @click='display' class="btn">26
@@ -71,8 +76,6 @@
 
 </template>
 
-
-
 <script>
 import InfoCard from 'vue-info-card';
   // import CardAnimationsPage from '/src/components/card';
@@ -83,6 +86,9 @@ import InfoCard from 'vue-info-card';
   data() {
     return {
       text: '',
+      form: {
+          checked: []
+        },
       front: {
         title: '30th October',
         graphData: "Hover to see",
