@@ -5,7 +5,7 @@
 <div>
     <b-form-textarea v-model="value" debounce="500" rows="3" max-rows="5"></b-form-textarea>
     <pre class="mt-2 mb-0">{{ value }}</pre>
-</div>
+  </div>
 
       <div @click="append('1')" class="btn">{{ current || '1'}}</div >
       <div @click='display' class="btn">2
@@ -17,7 +17,6 @@
 
       <div @click='display' class="btn">5
          <pre class="mt-2 mb-0">{{ value }}</pre>
-
       </div>
       <div @click='display' class="btn">6</div>
       <div @click='display' class="btn">7</div>
