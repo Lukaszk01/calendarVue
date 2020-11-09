@@ -17,24 +17,8 @@
 
       <div @click='display' class="btn">5
          <pre class="mt-2 mb-0">{{ value }}</pre>
+
       </div>
-      <div @click='display' class="btn">6</div>
-      <div @click='display' class="btn">7</div>
-      <div @click='display' class="btn">8</div>
-      <div @click='display' class="btn">9</div>
-      <div @click='display' class="btn">10</div>
-      <div @click='display' class="btn">11</div>
-      <div @click='display' class="btn">12</div>
-      <div @click='display' class="btn">12</div>
-      <div @click='display' class="btn">13</div>
-      <div @click='display' class="btn">14</div>
-      <div @click='display' class="btn">15</div>
-      <div @click='display' class="btn">16</div>
-      <div @click='display' class="btn">17</div>
-      <div @click='display' class="btn">18</div>
-      <div @click='display' class="btn">19</div>
-      <div @click='display' class="btn">20</div>
-      <div @click='display' class="btn">21</div>
       <div @click='display' class="btn">23
       <b-form-group id="input-group-4">
         <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
