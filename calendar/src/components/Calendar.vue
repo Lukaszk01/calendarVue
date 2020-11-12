@@ -90,7 +90,21 @@ import InfoCard from 'vue-info-card';
   data() {
     return {
       value: '',
-
+      form: {
+          checked: []
+        },
+      front: {
+        title: '30th October',
+        graphData: "Hover to see",
+      },
+      back: {
+        title: 'Your tasks for 30th of October:',
+        message: '1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing <br> 1. Do this <br> 2. Do that <br>3. And another thing',
+      },
+      newText: '',
+      current: ''
+    }
+  },
   methods: {
       formatter(value) {
         return value.toLowerCase()
