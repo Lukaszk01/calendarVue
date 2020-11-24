@@ -153,7 +153,7 @@ import InfoCard from 'vue-info-card';
       },
        addReview(review) {
         this.reviews.push(review)
-      }
+      },
        onSubmit() {
         if (this.name === '' || this.review === '' || this.rating === null || this.recommend === null) {
           alert('Review is incomplete. Please fill out every field.')
