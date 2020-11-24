@@ -1,6 +1,4 @@
-
-    <template>
-
+<template>
     <form class="review-form" @submit.prevent="onSubmit">
       <h3>Leave a review</h3>
       <label for="name">Name:</label>
@@ -26,38 +24,41 @@
       <input class="button" type="submit" value="Submit">  
   
     </form>
-    <template>
-    ,
-    data() {
-      return {
-        name: '',
-        review: '',
-        rating: null,
-    
-        recommend: null
-    
-      }
-    },
-    methods: {
-      onSubmit() {
-        if (this.name === '' || this.review === '' || this.rating === null || this.recommend === null) {
-          alert('Review is incomplete. Please fill out every field.')
-          return
+</template>
+
+<script>
+    export default {
+        data() {
+        return {
+            name: '',
+            review: '',
+            rating: null,
+        
+            recommend: null
+        
         }
-  
-        let productReview = {
-          name: this.name,
-          review: this.review,
-          rating: this.rating,
-          recommend: this.recommend
-  
+        },
+        methods: {
+        onSubmit() {
+            if (this.name === '' || this.review === '' || this.rating === null || this.recommend === null) {
+            alert('Review is incomplete. Please fill out every field.')
+            return
+            }
+    
+            let productReview = {
+            name: this.name,
+            review: this.review,
+            rating: this.rating,
+            recommend: this.recommend
+    
+            }
+            this.$emit('review-submitted', productReview)
+            this.name = ''
+            this.review = ''
+            this.rating = null
+            this.recommend = null
+    
         }
-        this.$emit('review-submitted', productReview)
-        this.name = ''
-        this.review = ''
-        this.rating = null
-        this.recommend = null
-  
-      }
-    }
-  })
+        }
+  }
+</script>
