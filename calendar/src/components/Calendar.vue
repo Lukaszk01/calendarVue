@@ -102,26 +102,24 @@
       <input class="button" type="submit" value="Submit">  
   
     </form>
-    <div class="review-container">
-    <h3>Reviews:</h3>
-      <ul>
-        <li v-for="(review, index) in reviews" :key="index">
-          {{ review.name }} gave this {{ review.rating }} stars
-          <br/>
-          "{{ review.review }}"
-          <br/>
-          Recommended: {{ review.recommend }}
-        </li>
-      </ul>
+
+    <br>
+    <div class="container mt-3 mb-3">
+      <div class="review-container">
+          <h3>Reviews:</h3>
+            <ul>
+              <li v-for="(review, index) in reviews" :key="index">
+                {{ review.name }} gave this {{ review.rating }} stars
+                <br/>
+                "{{ review.review }}"
+                <br/>
+                Recommended: {{ review.recommend }}
+              </li>
+            </ul>
+          </div>
     </div>
-
 </div>
-    
-    
   </div>
-
-  
-
 </template>
 
 <script>
@@ -153,6 +151,9 @@ import InfoCard from 'vue-info-card';
       formatter(value) {
         return value.toLowerCase()
       },
+       addReview(review) {
+        this.reviews.push(review)
+      }
        onSubmit() {
         if (this.name === '' || this.review === '' || this.rating === null || this.recommend === null) {
           alert('Review is incomplete. Please fill out every field.')
