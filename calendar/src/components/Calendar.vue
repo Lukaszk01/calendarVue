@@ -102,6 +102,18 @@
       <input class="button" type="submit" value="Submit">  
   
     </form>
+    <div class="review-container">
+    <h3>Reviews:</h3>
+      <ul>
+        <li v-for="(review, index) in reviews" :key="index">
+          {{ review.name }} gave this {{ review.rating }} stars
+          <br/>
+          "{{ review.review }}"
+          <br/>
+          Recommended: {{ review.recommend }}
+        </li>
+      </ul>
+    </div>
 
 </div>
     
@@ -160,6 +172,12 @@ import InfoCard from 'vue-info-card';
         this.rating = null
         this.recommend = null
   
+      }
+    },
+    props: {
+      reviews: {
+        type: Array,
+        required: true
       }
     }
 }
